@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head> 
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title> To Do List</title>
+        <style>
+            body{
+                margin: 0;
+                background-color: #616091;
+            }
+            h1{
+                color: #fb97ad;
+                text-align: center;
+            }
+            div{
+                margin: 16px;
+                padding: 8px;
+                background-color: #04041c;
+                box-shadow: 2px 5px 5px rgba(0,0,0,0.7);
+                border: none;
+                border-radius: 25px;
+            }
+            #container{
+                margin: 24px;
+                padding: 24px;
+                color: white;
+                background-color: #04041c;
+                text-align: center;
+            }
+            #input{
+                color: white;
+                background-color: #04041c;
+                border: none;
+                border-bottom: 1px solid #616091;
+                border-left: 1px solid #616091;
+            }
+            #btn{
+                border: none;
+                border-radius: 8px;
+                background-color: #b4b3d8;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1> To Do List</h1>
+            </div>
+        <div id="container">
+            <input type="input" placeholder="Enter your text here..">
+            &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+            <button id="btn">AddToDo</button>
+            <ul class="ul" style="list-style-type:none;">
+            </ul>
+        </div>
+    </body>
+    <script type="text/javascript">        
+    let inputBx =document.querySelector('#inputBx');
+    let list = document.querySelector('#list');    
+        
+    inputBx.addEventListener("keyup", function(event){
+        if(event.key == "AddToDo"){
+            addItem(this.value)
+            this.value = ""
+        }
+    })
+        
+    let addItem = (inputBx) => {
+        let listItem = document.createElement("li");
+        listItem.innerHTML = '$(inputBx)<i><i>';
+
+            list.appendChild(listItem);
+    }
+    </script>
+</html>
+</html>
